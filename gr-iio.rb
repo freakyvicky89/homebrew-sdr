@@ -12,8 +12,8 @@ class GrIio < Formula
   depends_on "flex" => :build
   depends_on "bison" => :build
   depends_on "python"
-  #depends_on "gmp" => :build
-  #depends_on "mpir" => :build
+  depends_on "gmp" => :build
+  depends_on "mpir" => :build
   depends_on "eblot/sdr/gnuradio"
   depends_on "eblot/sdr/libiio"
   depends_on "eblot/sdr/libad9361"
