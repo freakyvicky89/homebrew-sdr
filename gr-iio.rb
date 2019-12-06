@@ -32,6 +32,7 @@ class GrIio < Formula
   def install
     python = Formulary.factory 'python'
     libad9361 = Formulary.factory 'eblot/sdr/libad9361'
+    libiio = Formulary.factory 'eblot/sdr/libiio'
     pyver = 'python3.7'
 
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/#{pyver}/site-packages"
@@ -45,6 +46,8 @@ class GrIio < Formula
       -DPYTHON_EXECUTABLE=#{python.bin}/python3
       -DAD9361_INCLUDE_DIRS=#{libad9361.prefix}/ad9361.framework/Headers
       -DAD9361_LIBRARIES=#{libad9361.prefix}/ad9361.framework
+      -IIO_INCLUDE_DIRS=#{libiio.prefix}/iio.framework/Headers
+      -IIO_LIBRARIES=#{libiio.prefix}/iio.framework
     ]
 
     mkdir "build" do
